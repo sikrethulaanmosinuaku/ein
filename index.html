@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>EIN</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,800;1,500&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#16110e;--ink:#2b211a;--cream:#f3e9d2;--tx:#efe4cf;--mut:#9c8b78;--red:#e0553b;--gold:#e8b23a;--ln:#4a3d32}
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;background:var(--bg);color:var(--tx);font:15px/1.45 'Work Sans',sans-serif;padding-bottom:90px;overflow-x:hidden}
+body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.07;z-index:99;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2{font-family:Fraunces,serif;font-weight:800}
+.wrap{max-width:480px;margin:0 auto;padding:18px 16px;display:flex;flex-direction:column;gap:14px}
+.hide{display:none!important}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logo{font:800 30px Fraunces,serif;letter-spacing:4px}.logo i{color:var(--red);font-style:normal}
+.me{font-size:13px;color:var(--mut);text-align:right}.me b{color:var(--gold)}
+label{font-size:12px;color:var(--mut);font-weight:600}
+input,select{width:100%;background:#211a15;border:2px solid var(--ln);border-radius:8px;padding:11px 12px;color:var(--tx);font:inherit;outline:0}
+input:focus,select:focus{border-color:var(--gold)}
+.f{display:flex;flex-direction:column;gap:5px}.row{display:flex;gap:8px}
+button.b{border:2px solid var(--tx);background:var(--red);color:#fff;font:700 14px 'Work Sans';padding:11px 18px;border-radius:8px;cursor:pointer;box-shadow:3px 3px 0 var(--tx);transition:.12s}
+button.b:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--tx)}button.b:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--tx)}
+button.b.g{background:none;color:var(--tx)}button.b:disabled{opacity:.45}
+.msg{font-size:13px;color:var(--gold);min-height:18px}
+.card-p{background:#1f1813;border:2px solid var(--ln);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:11px}
+nav{position:fixed;bottom:0;left:0;right:0;z-index:50;background:#120d0a;border-top:2px solid var(--ln);display:flex;justify-content:center;gap:2px;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))}
+nav button{flex:1;max-width:100px;background:none;border:0;color:var(--mut);font:700 13px 'Work Sans';padding:10px 4px;border-radius:8px;cursor:pointer}
+nav button.on{color:var(--bg);background:var(--tx)}
+/* welcome */
+#w{min-height:100vh;display:flex;align-items:center;justify-content:center}
+#w .in{max-width:340px;width:100%;padding:24px;display:flex;flex-direction:column;gap:14px}
+#w h1{font-size:54px;line-height:.95;letter-spacing:-1px}#w h1 em{color:var(--red);font-style:italic;font-weight:500}
+/* card */
+.cd{width:260px;height:390px;background:var(--cream);color:var(--ink);border:3px solid var(--ink);border-radius:14px;display:flex;flex-direction:column;padding:10px;gap:6px;position:relative;box-shadow:0 14px 30px #0009;font-family:'Work Sans'}
+.cd .hd{background:var(--a);color:#fff;border:2px solid var(--ink);border-radius:8px;padding:5px 9px;display:flex;justify-content:space-between;align-items:baseline}
+.cd .nm{font:800 17px Fraunces,serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px}.cd .hp{font-weight:700;font-size:12px}.cd .hp b{font:800 20px Fraunces}
+.cd .im{height:130px;border:2px solid var(--ink);border-radius:6px;position:relative;overflow:hidden;background:repeating-linear-gradient(45deg,var(--a),var(--a) 8px,#0002 8px,#0002 16px) center/cover}
+.cd .im:before,.cd .im:after{content:'';position:absolute;inset:0;background:inherit;background-repeat:no-repeat;background-position:center}
+.cd .im:before{inset:-12px;background-size:cover;filter:blur(9px) brightness(.55)}
+.cd .im:after{background-size:contain}
+.cd .ln{display:flex;justify-content:space-between;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.cd .ds{font:italic 500 11.5px/1.35 Fraunces,serif;min-height:46px;overflow:hidden}
+.cd .st{display:flex;justify-content:space-between;font-size:11px;font-weight:700;border-top:1.5px dashed var(--ink);border-bottom:1.5px dashed var(--ink);padding:4px 0}
+.cd .mv{display:flex;justify-content:space-between;font-size:12px;font-weight:600}.cd .mv b{font:800 15px Fraunces;color:var(--a)}
+.cd .ft{margin-top:auto;font-size:9px;color:#7a6a5a;display:flex;justify-content:space-between}
+.cd .stp{position:absolute;right:8px;top:158px;border:2px solid var(--a);color:var(--a);font:800 10px 'Work Sans';letter-spacing:1px;text-transform:uppercase;padding:1px 6px;border-radius:3px;transform:rotate(-8deg);background:#f3e9d2dd}
+.cd.foil:after{content:'';position:absolute;inset:0;border-radius:11px;pointer-events:none;background:linear-gradient(115deg,transparent 30%,#fff7 48%,transparent 62%);background-size:250% 100%;animation:fo 4s ease-in-out infinite}
+@keyframes fo{from{background-position:130% 0}to{background-position:-60% 0}}
+.sm{width:143px;height:215px;flex-shrink:0}.sm .cd{transform:scale(.55);transform-origin:0 0}
+.sm.lg{width:182px;height:273px}.sm.lg .cd{transform:scale(.7)}
+.grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.it{cursor:pointer;position:relative;transition:.15s}.it:nth-child(odd){transform:rotate(-1.2deg)}.it:nth-child(even){transform:rotate(1deg)}.it:hover{transform:translateY(-5px) rotate(0)}
+.it.sel{outline:3px solid var(--gold);outline-offset:3px;border-radius:12px}
+.tag{font-size:11px;text-align:center;color:var(--mut);margin-top:-4px}.tag b{color:var(--tx)}
+.x{position:absolute;top:-8px;right:-8px;z-index:3;background:var(--bg);color:var(--tx);border:2px solid var(--tx);border-radius:50%;width:24px;height:24px;font-size:12px;cursor:pointer}
+/* unboxing */
+#ov{position:fixed;inset:0;z-index:100;background:#0d0907f2;display:none;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:20px}#ov.on{display:flex}
+.stage{position:relative;width:260px;height:390px;display:flex;align-items:center;justify-content:center}
+.pk{position:absolute;width:210px;height:310px;background:linear-gradient(160deg,#c9442c,#8e2a1a);border:3px solid var(--tx);border-radius:6px 6px 14px 14px;display:flex;align-items:center;justify-content:center;font:800 44px Fraunces;letter-spacing:6px;color:#f3e9d2;transition:transform .7s ease,opacity .7s;touch-action:none}
+.pk:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,#0000 0 10px,#0001 10px 11px)}
+.tp{position:absolute;top:-3px;left:-3px;right:-3px;height:46px;background:#e8dcc0;border:3px solid var(--tx);border-radius:6px 6px 0 0;cursor:grab;display:flex;align-items:center;justify-content:center;font:700 11px 'Work Sans';letter-spacing:2px;color:var(--ink);clip-path:polygon(0 0,100% 0,100% 80%,96% 100%,90% 82%,84% 100%,78% 82%,72% 100%,66% 82%,60% 100%,54% 82%,48% 100%,42% 82%,36% 100%,30% 82%,24% 100%,18% 82%,12% 100%,6% 82%,0 100%);touch-action:none}
+.pk.open{transform:translateY(120px);opacity:0}
+.fl{position:absolute;width:260px;height:390px;perspective:900px;opacity:0;transform:translateY(40px) scale(.92);transition:.7s ease;cursor:pointer}.fl.in{opacity:1;transform:none}
+.fl>div{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s}.fl.turn>div{transform:rotateY(180deg)}
+.fl .bk,.fl .fr{position:absolute;inset:0;backface-visibility:hidden}.fl .fr{transform:rotateY(180deg)}
+.bk .cd{background:var(--ink);color:var(--cream);align-items:center;justify-content:center;font:800 40px Fraunces;letter-spacing:6px;border-color:var(--cream)}
+.flash{position:fixed;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:110}.flash.on{animation:fa .5s}@keyframes fa{30%{opacity:.7}}
+.stp.pop{animation:pop .35s cubic-bezier(.3,1.6,.5,1)}@keyframes pop{from{transform:rotate(-8deg) scale(2.2);opacity:0}}
+.hit{animation:hit .4s}@keyframes hit{25%{transform:translateX(-9px) rotate(-2deg)}60%{transform:translateX(9px)}}
+.bar{height:10px;border:2px solid var(--tx);border-radius:6px;overflow:hidden;background:#0006}.bar i{display:block;height:100%;width:100%;background:var(--red);transition:width .5s}
+.vs{display:flex;justify-content:center;align-items:center;gap:0}.vs b{font:800 22px Fraunces;color:var(--gold);z-index:2}
+.strip{display:flex;gap:10px;overflow-x:auto;padding:6px 2px 14px}
+.res{font:800 28px Fraunces;text-align:center}
+.pr{font-weight:700;color:var(--gold);text-align:center;font-size:13px;margin-top:-6px}
+</style></head><body>
+<div id="w"><div class="in">
+  <h1>Hey,<br>welcome to <em>EIN.</em></h1>
+  <div class="f"><label>Enter your code</label><input id="wc" placeholder="your secret code" autocomplete="off"></div>
+  <div class="f hide" id="wn"><label>New here? Pick a name</label><input id="wname" maxlength="16" placeholder="what should we call you"></div>
+  <button class="b" id="wg">Come in</button><div class="msg" id="wm">First time? Type any code you'll remember. It's how you get back in on any phone.</div>
+</div></div>
+<div id="app" class="hide">
+ <div class="wrap">
+  <div class="top"><div class="logo">E<i>I</i>N</div><div class="me" id="me"></div></div>
+  <section id="p-forge"><div class="card-p">
+    <h2>Make a card</h2>
+    <div class="f"><label>Title</label><input id="ti" maxlength="22" placeholder="Sponge"></div>
+    <div class="f"><label>Image link</label><input id="im" placeholder="https://…"></div>
+    <div class="row" style="align-items:center"><label class="b g" style="padding:8px 12px;border-radius:8px;cursor:pointer;box-shadow:none;border:2px dashed var(--ln)">or pick a photo<input type="file" id="fi" accept="image/*" hidden></label><span class="msg" id="fn" style="color:var(--mut)"></span></div>
+    <div class="f"><label>Say something about it. Funny or fierce = stronger card.</label><input id="de" maxlength="140" placeholder="Hits so hard the wifi disconnects"></div>
+    <button class="b" id="fg">Make it</button><div class="msg" id="fm">No description? You'll still get a card, just a weak one.</div>
+  </div></section>
+  <section id="p-vault" class="hide"><h2>Your cards</h2><div class="tag" id="vt"></div><div class="grid" id="gr"></div></section>
+  <section id="p-arena" class="hide"><h2>Arena</h2>
+    <div class="tag">1. Pick your fighter &nbsp; 2. Pick who to fight</div>
+    <div class="strip" id="mine"></div><div class="msg" id="am"></div>
+    <div id="fx"></div>
+    <div class="strip" id="opp"></div>
+    <button class="b" id="at" disabled>Fight</button>
+  </section>
+  <section id="p-shop" class="hide"><h2>Shop</h2>
+    <div class="card-p"><label>Got a card code from a friend?</label><div class="row"><input id="rc" placeholder="EIN-XXXXXX"><button class="b" id="rg">Redeem</button></div><div class="msg" id="rm"></div></div>
+    <div class="tag">Win fights to earn coins. Cards below are one-of-a-kind.</div><div class="grid" id="sh"></div>
+  </section>
+  <section id="p-admin" class="hide"><div class="card-p"><h2>Admin card</h2>
+    <div class="row"><input id="a1" placeholder="Title"><select id="at2"><option>love</option><option>fire</option><option>water</option><option>dark</option><option>nature</option><option>star</option></select></div>
+    <input id="a2" placeholder="Image link"><input id="a3" placeholder="Description">
+    <div class="row"><input id="ahp" type="number" placeholder="HP 300"><input id="aat" type="number" placeholder="ATK 120"></div>
+    <div class="row"><input id="ade" type="number" placeholder="DEF 100"><input id="asp" type="number" placeholder="SPD 100"></div>
+    <div class="row"><input id="ad1" type="number" placeholder="Move 1 dmg"><input id="ad2" type="number" placeholder="Move 2 dmg"></div>
+    <div class="row"><input id="as" type="number" min="1" max="5" placeholder="Stars 1-5"><input id="apr" type="number" placeholder="Shop price (0 = code only)"></div>
+    <button class="b" id="ag">Create card + code</button><div class="msg" id="amg"></div>
+    <label>All admin cards</label><div id="al" style="font-size:12px;color:var(--mut)"></div></div></section>
+ </div>
+ <nav id="nv"><button data-p="forge" class="on">Make</button><button data-p="vault">Cards</button><button data-p="arena">Arena</button><button data-p="shop">Shop</button><button data-p="admin" class="hide" id="nadm">Admin</button><button id="out">Out</button></nav>
+</div>
+<div id="ov"><div class="stage" id="stg"></div><div id="ovt" class="res"></div><button class="b hide" id="ovb">Nice, keep it</button></div>
+<div class="flash" id="fh"></div>
+<script>
+const $=s=>document.querySelector(s),sleep=t=>new Promise(r=>setTimeout(r,t)),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const TY={love:['Love','#c2255c'],fire:['Fire','#d9480f'],water:['Water','#1971c2'],dark:['Shadow','#5f3dc4'],nature:['Nature','#2f9e44'],star:['Cosmic','#b8860b']},RN=['Common','Uncommon','Rare','Epic','Legendary'];
+let code=localStorage.getItem('ein_code')||'',P=null,adm=false,sel=null,tgt=null,up='';
+async function api(a,d={}){try{const r=await fetch('/api/game',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({a,code,...d})});return await r.json()}catch(e){return{err:"Can't reach the server."}}}
+function card(c){const t=TY[c.t]||TY.love;return`<div class="cd ${c.s>=4?'foil':''}" style="--a:${t[1]}"><div class="hd"><div class="nm">${esc(c.title)}</div><div class="hp"><b>${c.hp}</b> HP</div></div>
+<div class="im" data-img="${esc(c.img)}"></div><div class="ln"><span>${t[0]} type</span><span>${'★'.repeat(c.s)}${'☆'.repeat(5-c.s)}</span></div><div class="stp">${RN[c.s-1]}</div>
+<div class="ds">“${esc(c.desc)}”</div><div class="st"><span>ATK ${c.atk}</span><span>DEF ${c.def}</span><span>SPD ${c.spd}</span></div>
+${c.m.map(m=>`<div class="mv"><span>${esc(m.n)}</span><b>${m.d}</b></div>`).join('')}<div class="ft"><span>#${c.id}</span><span>EIN</span></div></div>`}
+const sm=(c,x='')=>`<div class="sm ${x}">${card(c)}</div>`;
+function imgs(root){root.querySelectorAll('.im[data-img]').forEach(b=>{const u=b.dataset.img;if(!u)return;const tr=[u,'https://wsrv.nl/?url='+encodeURIComponent(u.replace(/^https?:\/\//,''))];let i=0;(function n(){if(i>=tr.length)return;const m=new Image();m.onload=()=>b.style.backgroundImage=`url("${tr[i]}")`;m.onerror=()=>{i++;n()};m.src=tr[i]})()})}
+function head(){$('#me').innerHTML=`${esc(P.name)}<br><b>${P.coins} coins</b> · ${P.w}W ${P.l}L`}
+// welcome
+$('#wg').onclick=async()=>{const c=$('#wc').value.trim();if(c.length<3){$('#wm').textContent='Make it at least 3 characters.';return}code=c;const r=await api('login',{name:$('#wname').value});
+  if(r.need){$('#wn').classList.remove('hide');$('#wm').textContent="Don't know that code yet. Pick a name and you're in.";return}
+  if(r.err){$('#wm').textContent=r.err;return}localStorage.setItem('ein_code',code);P=r.p;adm=r.admin;start()};
+$('#wc').onkeydown=e=>{if(e.key==='Enter')$('#wg').click()};
+async function start(){$('#w').classList.add('hide');$('#app').classList.remove('hide');$('#nadm').classList.toggle('hide',!adm);head();go('forge')}
+(async()=>{if(code){const r=await api('login');if(r.p){P=r.p;adm=r.admin;start()}}})();
+$('#out').onclick=()=>{localStorage.removeItem('ein_code');location.reload()};
+function go(p){document.querySelectorAll('section').forEach(s=>s.classList.toggle('hide',s.id!=='p-'+p));document.querySelectorAll('#nv button[data-p]').forEach(b=>b.classList.toggle('on',b.dataset.p===p));
+  if(p==='vault')vault();if(p==='arena')arena();if(p==='shop')shop();if(p==='admin')alist()}
+document.querySelectorAll('#nv button[data-p]').forEach(b=>b.onclick=()=>go(b.dataset.p));
+// forge
+$('#fi').onchange=e=>{const f=e.target.files[0];if(!f)return;$('#fn').textContent=f.name;const rd=new FileReader();rd.onload=()=>{const m=new Image();m.onload=()=>{const c=document.createElement('canvas'),k=Math.min(1,300/m.width);c.width=m.width*k;c.height=m.height*k;c.getContext('2d').drawImage(m,0,0,c.width,c.height);up=c.toDataURL('image/jpeg',.7);$('#im').value=''};m.src=rd.result};rd.readAsDataURL(f)};
+$('#fg').onclick=async()=>{if(!$('#ti').value.trim()){$('#fm').textContent='It needs a title.';return}$('#fg').disabled=true;$('#fm').textContent='Judging your description…';
+  const r=await api('forge',{title:$('#ti').value,img:up||$('#im').value.trim(),desc:$('#de').value});$('#fg').disabled=false;
+  if(r.err){$('#fm').textContent=r.err;return}P=r.p;head();$('#fm').textContent='';unbox(r.card,()=>{['#ti','#im','#de'].forEach(s=>$(s).value='');up='';$('#fn').textContent='';go('vault')})};
+// unboxing: tear the top strip off, the card slides out, tap to flip
+function unbox(c,done){const ov=$('#ov');ov.classList.add('on');$('#ovt').textContent='';$('#ovb').classList.add('hide');
+  $('#stg').innerHTML=`<div class="fl" id="fl"><div><div class="bk"><div class="cd">EIN</div></div><div class="fr">${card(c)}</div></div></div><div class="pk" id="pk"><div class="tp" id="tp">← TEAR HERE</div>EIN</div>`;imgs($('#stg'));
+  const tp=$('#tp');let x0=null,dx=0,torn=false;
+  const tear=async()=>{if(torn)return;torn=true;tp.style.transition='.5s';tp.style.transform='translate(160px,-90px) rotate(35deg)';tp.style.opacity=0;await sleep(300);$('#pk').classList.add('open');$('#fl').classList.add('in');$('#ovt').textContent='tap the card'};
+  tp.onpointerdown=e=>{x0=e.clientX;tp.setPointerCapture(e.pointerId)};tp.onpointermove=e=>{if(x0===null||torn)return;dx=e.clientX-x0;tp.style.transform=`translate(${dx}px,${-Math.abs(dx)/12}px) rotate(${dx/14}deg)`;if(Math.abs(dx)>100)tear()};
+  tp.onpointerup=()=>{if(!torn){if(Math.abs(dx)<8)tear();else tp.style.transform=''}x0=null;dx=0};
+  $('#fl').onclick=async()=>{const f=$('#fl');if(!f.classList.contains('in')||f.classList.contains('turn'))return;f.classList.add('turn');$('#ovt').textContent='';
+    if(c.s>=4){$('#fh').classList.add('on');setTimeout(()=>$('#fh').classList.remove('on'),600)}await sleep(450);f.querySelector('.stp').classList.add('pop');
+    $('#ovt').textContent=c.s>=4?'Whoa. '+RN[c.s-1]+'.':c.s>=3?'Rare! Not bad.':c.s>=2?'Decent.':"It's… a card.";$('#ovb').classList.remove('hide')};
+  $('#ovb').onclick=()=>{ov.classList.remove('on');done()}}
+// vault
+function vault(){$('#vt').textContent=P.cards.length+'/8 cards. Tap one to set it as your fighter.';$('#gr').innerHTML=P.cards.length?P.cards.map(c=>`<div class="it ${c.id===sel?'sel':''}" data-i="${c.id}"><button class="x" data-d="${c.id}">✕</button>${sm(c)}</div>`).join(''):'<div class="tag">Nothing here yet. Go make one.</div>';imgs($('#gr'))}
+$('#gr').onclick=async e=>{const d=e.target.dataset.d;if(d){if(!confirm('Delete this card for good?'))return;const r=await api('del',{cid:d});P=r.p;if(sel===d)sel=null;vault();return}const it=e.target.closest('.it');if(it){sel=it.dataset.i;vault()}};
+// arena
+let ops=[];
+async function arena(){head();if(!sel||!P.cards.some(c=>c.id===sel))sel=P.cards[0]?.id||null;
+  $('#mine').innerHTML=P.cards.length?P.cards.map(c=>`<div class="it ${c.id===sel?'sel':''}" data-i="${c.id}">${sm(c)}</div>`).join(''):'<div class="tag">Make a card first.</div>';imgs($('#mine'));
+  $('#am').textContent='Looking for players…';const r=await api('arena');if(r.err){$('#am').textContent=r.err;return}
+  ops=[...r.players,...r.bots];tgt=null;$('#am').textContent=r.players.length?'':'Nobody else has made a card yet. Bots will do for now.';
+  $('#opp').innerHTML=ops.map(o=>`<div>${o.cards.map(c=>`<div class="it" data-p="${o.pid}" data-o="${c.id}">${sm(c)}</div>`).join('')}<div class="tag"><b>${esc(o.name)}</b> · ${o.w}W ${o.l}L</div></div>`).join('');imgs($('#opp'));$('#at').disabled=true}
+$('#mine').onclick=e=>{const it=e.target.closest('.it');if(it){sel=it.dataset.i;arena2()}};
+function arena2(){document.querySelectorAll('#mine .it').forEach(i=>i.classList.toggle('sel',i.dataset.i===sel));pick()}
+$('#opp').onclick=e=>{const it=e.target.closest('.it');if(!it)return;tgt={p:it.dataset.p,o:it.dataset.o};document.querySelectorAll('#opp .it').forEach(i=>i.classList.toggle('sel',i===it));pick()};
+function pick(){$('#at').disabled=!(sel&&tgt);$('#fx').innerHTML=''}
+$('#at').onclick=async()=>{if(!sel||!tgt)return;$('#at').disabled=true;
+  const mc=P.cards.find(c=>c.id===sel),oc=ops.find(o=>o.pid===tgt.p).cards.find(c=>c.id===tgt.o);
+  const r=await api('fight',{cid:sel,pid:tgt.p,oid:tgt.o});if(r.err){$('#am').textContent=r.err;$('#at').disabled=false;return}
+  $('#fx').innerHTML=`<div class="vs"><div id="fa">${sm(mc,'lg')}</div><b>VS</b><div id="fb">${sm(oc,'lg')}</div></div><div class="bar" style="margin-top:8px"><i id="b1"></i></div><div class="bar" style="margin-top:6px"><i id="b2"></i></div><div class="pr" id="pr"></div><div class="res" id="rs"></div>`;imgs($('#fx'));$('#fx').scrollIntoView({behavior:'smooth',block:'center'});await sleep(600);
+  for(const x of r.r){const lo=$(x.w?'#fa':'#fb');$('#pr').textContent=`${x.w?r.on:'You'}: ${x.m} (−${x.d})`;lo.classList.add('hit');$('#b1').style.width=x.ha*100+'%';$('#b2').style.width=x.hb*100+'%';await sleep(700);lo.classList.remove('hit')}
+  $('#pr').textContent=`+${r.gain} coins`;$('#rs').textContent=r.win?'You won.':'Lost that one.';P.coins=r.coins;P.w=r.w;P.l=r.l;head();$('#at').disabled=false};
+// shop
+async function shop(){head();const r=await api('shop');$('#sh').innerHTML=(r.items||[]).length?r.items.map(i=>`<div>${sm(i.card)}<div class="pr" style="margin:6px 0">${i.price} coins</div><button class="b" data-s="${i.sid}" style="width:100%;padding:8px">Buy</button></div>`).join(''):'<div class="tag">Nothing for sale right now.</div>';imgs($('#sh'))}
+$('#sh').onclick=async e=>{const s=e.target.dataset.s;if(!s)return;const r=await api('buy',{sid:s});if(r.err){alert(r.err);return}P=r.p;head();unbox(r.card,()=>go('vault'))};
+$('#rg').onclick=async()=>{const r=await api('redeem',{ac:$('#rc').value});if(r.err){$('#rm').textContent=r.err;return}P=r.p;head();$('#rc').value='';$('#rm').textContent='';unbox(r.card,()=>go('vault'))};
+// admin
+const nv=id=>$(id).value;
+$('#ag').onclick=async()=>{const r=await api('admin_create',{title:nv('#a1'),t:nv('#at2'),img:nv('#a2'),desc:nv('#a3'),hp:nv('#ahp'),atk:nv('#aat'),def:nv('#ade'),spd:nv('#asp'),d1:nv('#ad1'),d2:nv('#ad2'),s:nv('#as'),price:nv('#apr')});$('#amg').textContent=r.err||'Code: '+r.code+' (share it, or it goes on sale if you set a price)';alist()};
+async function alist(){const r=await api('admin_list');$('#al').innerHTML=(r.list||[]).map(x=>`${esc(x.code)} · ${esc(x.title)} · ${x.price?x.price+'c':'code only'} · ${x.claimed?'claimed':'available'}`).join('<br>')}
+</script></body></html>
