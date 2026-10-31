@@ -116,27 +116,31 @@ export function ArchiveGallery() {
 
         <header className="cover">
           <div className="cover-left">
-            <div className="eyebrow"><span className="eyebrow-dot" /> A SMALL, CURATED INTERNET</div>
-            <h1>AVCI<br /><span>COLLECTIONS</span></h1>
+            <div className="eyebrow"><span className="eyebrow-dot" /> AVCI COLLECTIONS / INTERNET ARCHIVE</div>
+            <h1>KEEP THE<br /><span>GOOD STUFF.</span></h1>
             <div className="cover-caption">
-              <p>Good jokes deserve<br />a place on the wall.</p>
-              <a className="jump-link" href="#gallery">Browse the collection <span aria-hidden="true">↓</span></a>
+              <p>A home for the images<br />you can&apos;t stop sending.</p>
+              <a className="jump-link" href="#gallery">Explore the archive <span aria-hidden="true">↓</span></a>
             </div>
           </div>
-          <div className="orbit-art" aria-hidden="true">
-            <span className="orbit-ring orbit-one" /><span className="orbit-ring orbit-two" />
-            <span className="orbit-core">A<span>✳</span></span>
-            <span className="orbit-dot dot-one" /><span className="orbit-dot dot-two" />
-            <span className="orbit-caption">YOUR INTERNET, COLLECTED.</span>
+          <div className="cover-composition" aria-hidden="true">
+            <div className="print-sheet sheet-back"><span>✳</span></div>
+            <div className="print-sheet sheet-front">
+              <div className="sheet-top"><span>AVCI COLLECTIONS</span><span>EST. ONLINE</span></div>
+              <div className="sheet-word">THE<br />INTERNET<br /><i>IS A LOT.</i></div>
+              <div className="sheet-bottom"><span>KEEP THE GOOD PARTS</span><span>↗</span></div>
+            </div>
+            <div className="sticker-label">GOOD<br />FINDS<br /><b>ONLY ✳</b></div>
           </div>
           <div className="cover-bottom"><span>INTERNET CULTURE, FILED FOR LATER</span><span>COLLECTION 001 <b aria-hidden="true">✳</b></span></div>
         </header>
 
+        <div className="ticker" aria-hidden="true"><div className="ticker-track"><span>GOOD FINDS ✳ INTERNET ARTIFACTS ✳ SEND IT TO THE GROUP CHAT ✳ KEEP SCROLLING ✳ </span><span>GOOD FINDS ✳ INTERNET ARTIFACTS ✳ SEND IT TO THE GROUP CHAT ✳ KEEP SCROLLING ✳ </span></div></div>
         <section id="gallery" className="archive">
           <div className="archive-heading">
             <div>
-              <div className="eyebrow">THE GOOD STUFF, ALL TOGETHER</div>
-              <h2>Scroll <span>responsibly.</span></h2>
+              <div className="eyebrow">A LITTLE PIECE OF THE INTERNET</div>
+              <h2>The <span>collection.</span></h2>
             </div>
             <label className="search-box">
               <span aria-hidden="true">⌕</span>

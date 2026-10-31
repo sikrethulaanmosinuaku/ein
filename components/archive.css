@@ -204,3 +204,55 @@ button { cursor: pointer; }
   .brand { gap: 5px; font-size: 12px; letter-spacing: .08em; }
   .add-trigger { padding: 9px 8px; }
 }
+
+/* The hero borrows the texture and movement of overprinted paper. */
+.cover { min-height: 520px; gap: 4%; }
+.cover:before { opacity: .34; }
+.cover h1 { margin: 23px 0 26px; font-size: clamp(70px, 7.5vw, 108px); line-height: .9; }
+.cover h1 span { margin-top: 4px; font-size: clamp(62px, 6.5vw, 94px); line-height: .95; white-space: nowrap; }
+.cover-caption { align-items: center; }
+.cover-composition { position: relative; z-index: 1; width: min(100%, 390px); height: 370px; justify-self: center; }
+.print-sheet { position: absolute; width: 78%; height: 86%; }
+.sheet-back { top: 6%; left: 10%; display: flex; align-items: flex-start; justify-content: flex-end; background: oklch(0.9 0.21 125); color: oklch(0.2 0.03 300); padding: 10px; transform: rotate(9deg); }
+.sheet-back span { font-size: 30px; }
+.sheet-front { top: 5%; left: 10%; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; background: oklch(0.79 0.13 305); padding: 20px; color: oklch(0.2 0.03 300); transform: rotate(-4deg); box-shadow: 0 18px 65px oklch(0.07 0.02 300 / .45); animation: paper-drift 6s ease-in-out infinite; }
+.sheet-front:after { position: absolute; right: -85px; bottom: -80px; width: 205px; height: 205px; border: 2px solid oklch(0.22 0.04 300 / .4); border-radius: 50%; content: ""; box-shadow: 0 0 0 24px oklch(0.79 0.13 305), 0 0 0 26px oklch(0.22 0.04 300 / .35), 0 0 0 50px oklch(0.79 0.13 305), 0 0 0 52px oklch(0.22 0.04 300 / .25); }
+.sheet-top, .sheet-bottom { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 8px; font-size: 10px; font-weight: 800; letter-spacing: .11em; }
+.sheet-word { position: relative; z-index: 1; font: clamp(48px, 4.5vw, 65px)/.9 Anton, Impact, sans-serif; letter-spacing: -.025em; }
+.sheet-word i { font-style: normal; color: oklch(0.36 0.14 315); }
+.sheet-bottom span:last-child { font-size: 22px; line-height: .7; }
+.sticker-label { position: absolute; z-index: 2; right: -1%; bottom: 8%; display: grid; place-content: center; width: 115px; height: 115px; border-radius: 50%; background: oklch(0.83 0.16 48); color: oklch(0.24 0.06 35); font-size: 12px; font-weight: 800; line-height: 1.15; letter-spacing: .1em; text-align: center; transform: rotate(12deg); animation: sticker-wiggle 4s ease-in-out infinite; }
+.sticker-label b { font-size: 14px; }
+@keyframes paper-drift { 50% { transform: rotate(-2deg) translateY(-5px); } }
+@keyframes sticker-wiggle { 50% { transform: rotate(18deg) translateY(-4px); } }
+.ticker { overflow: hidden; margin-top: 0; border-bottom: 1px solid oklch(0.38 0.025 140); background: oklch(0.23 0.025 300); color: oklch(0.86 0.1 305); }
+.ticker-track { display: flex; width: max-content; animation: tick 27s linear infinite; }
+.ticker-track span { flex: none; padding: 12px 0; font-size: 12px; font-weight: 800; letter-spacing: .16em; white-space: pre; }
+@keyframes tick { to { transform: translateX(-50%); } }
+.archive-heading h2 { font-size: clamp(43px, 5vw, 58px); }
+.empty-collection { background: linear-gradient(120deg, oklch(0.25 0.05 305), oklch(0.19 0.025 155)); }
+.settings-trigger:focus-visible, .add-trigger:focus-visible, .meme-card:focus-visible { outline-color: var(--site-accent); }
+@media (max-width: 760px) {
+  .cover { min-height: 425px; }
+  .cover h1 { font-size: clamp(52px, 8.5vw, 76px); }
+  .cover h1 span { font-size: clamp(48px, 7.4vw, 66px); }
+  .cover-composition { width: 100%; max-width: 290px; height: 280px; }
+  .sheet-word { font-size: clamp(37px, 5.4vw, 50px); }
+  .sticker-label { width: 85px; height: 85px; font-size: 10px; }
+}
+@media (max-width: 520px) {
+  .topbar .brand { gap: 5px; font-size: 12px; letter-spacing: .07em; }
+  .add-trigger { white-space: nowrap; }
+  .cover { min-height: 620px; gap: 16px; }
+  .cover h1 { font-size: clamp(54px, 14vw, 72px); }
+  .cover h1 span { font-size: clamp(48px, 12.7vw, 65px); }
+  .cover-composition { width: 225px; height: 245px; margin: 0 28px 0 0; justify-self: end; }
+  .sheet-front { padding: 14px; }
+  .sheet-word { font-size: 38px; }
+  .sheet-top, .sheet-bottom { font-size: 8px; }
+  .sticker-label { right: -4%; bottom: 2%; width: 75px; height: 75px; font-size: 9px; }
+  .sticker-label b { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sheet-front, .sticker-label, .ticker-track { animation: none; }
+}
