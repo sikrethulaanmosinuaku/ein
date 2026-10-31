@@ -13,7 +13,7 @@ cd ~/storage/downloads
 python replace_ein.py
 ```
 
-When prompted, enter `~/storage/downloads/Avci-Collections-Updated.zip` (or the actual name of the downloaded ZIP), your **new account's** GitHub classic token, and the repo owner. Review the list. **The script deletes existing files on the default branch that are not in the ZIP**, so confirm only if you want that. Other branches remain untouched and old commits stay in history. Never share your token.
+When prompted, enter `~/storage/downloads/Avci-Collections-Fixed.zip` (or the actual name of the downloaded ZIP), your GitHub classic token, and the repo owner. Review the list. **The script deletes existing files on the default branch that are not in the ZIP**, so confirm only if you want that. Other branches remain untouched and old commits stay in history. Never share your token.
 
 Alternatively, commit the files normally with Git, keeping your repo's `.git` folder. A push triggers a new Vercel deployment.
 

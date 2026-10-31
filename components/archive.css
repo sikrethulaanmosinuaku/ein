@@ -334,6 +334,39 @@ button { cursor: pointer; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
 
+/* A playful collection of shapes: a little color without visual noise. */
+.topbar { border-bottom-color: oklch(0.33 0.03 265); }
+.brand-mark { box-shadow: 0 0 0 5px oklch(0.91 0.21 125 / .07); }
+.cover { overflow: visible; }
+.cover h1 { animation: word-arrival .7s ease-out both; }
+.cover-caption { animation: word-arrival .85s ease-out both; }
+.collection-card { border-color: oklch(0.44 0.05 285); background: oklch(0.23 0.035 275); box-shadow: 0 26px 70px oklch(0.08 0.025 265 / .42), 9px 9px 0 oklch(0.62 0.14 300 / .22); }
+.collection-card-top span:last-child { color: oklch(0.84 0.16 38); }
+.collection-art { isolation: isolate; background: linear-gradient(135deg, oklch(0.79 0.13 225), oklch(0.65 0.16 265)); }
+.collection-art::before { background: radial-gradient(circle at 80% 18%, oklch(0.88 0.10 305 / .7), transparent 40%); }
+.art-grid { position: absolute; inset: 0; background-image: linear-gradient(oklch(0.96 0.02 255 / .12) 1px, transparent 1px), linear-gradient(90deg, oklch(0.96 0.02 255 / .12) 1px, transparent 1px); background-size: 30px 30px; }
+.art-fold { left: -12%; bottom: -43%; width: 88%; height: 95%; background: oklch(0.35 0.13 274); }
+.art-orbit { position: absolute; z-index: 1; top: 10%; right: 14%; width: 135px; height: 135px; border: 1px solid oklch(0.96 0.02 260 / .62); border-radius: 50%; transform: scaleX(1.35) rotate(-30deg); animation: orbit-drift 9s ease-in-out infinite; }
+.art-circle { z-index: 2; background: oklch(0.88 0.15 80); box-shadow: 0 0 38px oklch(0.86 0.14 75 / .28); }
+.art-ribbon { position: absolute; z-index: 2; right: -4%; bottom: 13%; width: 108px; height: 31px; border-radius: 999px; background: oklch(0.80 0.16 25); transform: rotate(-25deg); animation: ribbon-drift 6s ease-in-out infinite; }
+.art-cross { z-index: 3; right: 12%; bottom: 12%; color: oklch(0.98 0.02 260); }
+.collection-card-bottom a { background: oklch(0.27 0.035 275); transition: transform .2s, border-color .2s; }
+.collection-card-bottom a:hover { transform: translate(3px, -3px); border-color: var(--site-accent); }
+.eyebrow-dot { animation: dot-breathe 3s ease-in-out infinite; }
+.empty-collection { border-color: oklch(0.38 0.04 275); background: linear-gradient(115deg, oklch(0.23 0.035 275), oklch(0.22 0.025 245)); }
+.empty-collection .empty-mark { background: oklch(0.76 0.14 305); color: oklch(0.23 0.05 300); }
+.meme-card { transition: transform .25s ease; }
+.meme-image-wrap { border-radius: 14px; }
+.source-switch button, .palette-choice { transition: background .2s, border-color .2s, transform .2s; }
+.palette-choice:hover { transform: translateY(-2px); }
+@keyframes word-arrival { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes orbit-drift { 50% { transform: scaleX(1.35) rotate(20deg); } }
+@keyframes ribbon-drift { 50% { transform: rotate(-18deg) translateY(-5px); } }
+@keyframes dot-breathe { 50% { box-shadow: 0 0 16px var(--site-accent); } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
 /* A considered editorial landing page: one clear headline and a useful archive. */
 body { background: oklch(0.16 0.018 265); }
 .site-shell, main { background: oklch(0.16 0.018 265); color: oklch(0.96 0.01 265); }

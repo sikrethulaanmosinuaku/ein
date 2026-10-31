@@ -198,7 +198,7 @@ export function ArchiveGallery() {
           <div className="cover-composition">
             <div className="collection-card">
               <div className="collection-card-top"><span>YOUR COLLECTION</span><span>✳</span></div>
-              <div className="collection-art" aria-hidden="true"><span className="art-fold" /><span className="art-circle" /><span className="art-cross">✳</span></div>
+              <div className="collection-art" aria-hidden="true"><span className="art-grid" /><span className="art-fold" /><span className="art-orbit" /><span className="art-circle" /><span className="art-ribbon" /><span className="art-cross">✳</span></div>
               <div className="collection-card-bottom"><div><strong>A place for your finds.</strong><span>Pictures, memes, whatever you like.</span></div><a href="#gallery" aria-label="Browse the collection">↗</a></div>
             </div>
           </div>
